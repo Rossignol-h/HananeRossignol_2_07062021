@@ -1,17 +1,16 @@
 html {
-  font: size 16px;
+  font: size 14px;
 }
 
 body {
   padding: 0;
   margin: 0;
-  height: 100vh;
   font-family: 'Raleway', sans-serif;
   line-height: 1.3;
-  display: grid;
+display: grid;
   gap: 3px;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows:auto;
+grid-template-columns: repeat(12, 1fr);
+grid-template-rows: auto;
   grid-template-areas: 
   "h h h h h h h h h h h h"
   "m m m m m m m m a a a a"
@@ -19,23 +18,22 @@ body {
   "f f f f f f f f f f f f";
 }
 
-/*****************head grid***********/
+/*******************head grid************************/
 header {
   grid-area: h;
-  width: 95%;
+  width: 94%;
   margin: 0 auto 0 auto;   
 }
 
-/***************menu style***********/
+/*******head menu style***********/
 .menu_wrapper {
   display: flex;
   align-items: flex-end; 
+  margin-bottom: 3rem;
 }
-
 .menu_wrapper img {
   margin-right: 60%;
 }
-
 .menu_wrapper a {
   width: 40%;
   text-align: center; 
@@ -44,7 +42,6 @@ header {
   color: black;     
   border-top: transparent solid 3px;
 }
-
 .menu_wrapper a:first-of-type {
   border-top: #0065FC solid 3px;
   color: #0065FC;
@@ -62,33 +59,41 @@ header {
 #inscrire:hover {
   text-decoration: none;
   color: black;
+  border-top: none;
 }
 
-/**************search style************/
-.search_wrapper h2{
+/***********search style***************/
+.search_wrapper h1 {
   font-size: 1.3em;
 }
 
-.search_input i {
-  background-color: #F2F2F2;
-  border-radius: 1em 0em 0em 1em;
-  font-size: 1.2em;
-  padding: 0.6em;
+.search_wrapper {
+  width: 100%;
 }
 
+.search_input {
+  display: flex;
+}
+
+.search_input i:first-child {
+  background-color: #f2f2f2;
+  border-radius: 1em 0em 0em 1em;
+  font-size: 1.1rem;
+  text-align: center;
+  padding-top: 1rem;
+  width: 5%;
+}
 .search_input input {
-  background-color: #ffffff;
   border: 1px solid rgb(230, 227, 227);
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 700;
   padding: 0.7em;
+  width: 15%;
 }
-
 .search_input ::placeholder {
       color: rgb(0, 0, 0);
       opacity: 1;
-}   
-
+}    
 .search_input :focus {
   color: #0065FC;
   outline: none;
@@ -98,14 +103,20 @@ header {
 .search_input button {
   color: #F2F2F2;
   background-color: #0065FC;
+  cursor: pointer;
   border-radius: 0em 1em 1em 0em;
-  font-size: 1em;
+  text-align: center;
+  font-size: 1rem;
   font-weight: 700;
-  padding: 0.7em;
-  border: 0;
+  margin-left: -0.9em;
+  border: 0 ;
+  width: 10%;
+}
+#search_icon {
+  display: none;
 }
 
-/*******************filtres style**************/
+/*************filtres style********/
 .filtres_wrapper {
   display: flex;
   height: 50px;
@@ -115,14 +126,10 @@ header {
   place-items: center;  
 }
 
-.filtres_wrapper h4 {
-  font-size: 1.3em;
-}
-
 .filtres_wrapper a {
   border-radius: 50px;
-  height: 80%;
-  border: 2px solid #ebe8e8 ;
+  height: 90%;
+  border: 2px solid #dddbdb ;
   background-color: transparent;
   text-decoration: none;
   color: black; 
@@ -132,20 +139,21 @@ header {
   width: 20%; 
 }
 .filtres_button2 {
-  width: 18%;
+  width: 17%;
 }
 
 .filtres_button4 {
-  width: 24%;
+  width: 25%;
 }
 
 .filtres_wrapper i {
   height: 100%;
-  width: 2.2em;
+  width: 46px;
   text-align: center;
-  margin-left: -0.2em;
+  margin-top: -0.1rem;
+  margin-left: -0.2rem;
   border-radius: 50%;
-  border: 1px solid #DEEBFF ;
+  border: 2px solid #DEEBFF;
   line-height: 40px;
   background-color: #DEEBFF;
   color: #0065FC;
@@ -153,17 +161,13 @@ header {
 }
 
 .filtres_text {
-  font-size: 1em;
   font-weight: 700;
-  line-height: 40px;
-  margin-left: 10px;
+  margin: 10px;
 }
 
 .filtres_wrapper a:hover >i {
- transform: translateY(-0.5px);
-  box-shadow: 2px 2px 6px 0px rgba(61, 72, 238, 0.3);
-  border: 1px solid #f3f3f3 ;
-  background-color: #0065FC;
+  background-color: #4e94fd;
+  border: 2px solid rgb(78, 120, 184) ;
   color: #ffffff;
 }
 
