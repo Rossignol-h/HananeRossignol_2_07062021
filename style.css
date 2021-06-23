@@ -1,7 +1,17 @@
+* {
+  font-family: 'Raleway', sans-serif;
+}
+  
 html {
   font-size: 15px;
 }
 
+  a,li,ul {
+   text-decoration: none;
+   color: #000;
+   list-style: none;
+}
+  
 body {
   padding: 0;
   margin: 0;
@@ -93,9 +103,8 @@ header {
   width: 15%;
 }
 .search_input ::placeholder {
-      color: rgb(0, 0, 0);
-      opacity: 1;
-      font-family:'Raleway', sans-serif;
+    color: rgb(0, 0, 0);
+    opacity: 1;
 }    
 .search_input :focus {
   color: #0065FC;
@@ -105,7 +114,6 @@ header {
 
 .search_input button {
   color: #F2F2F2;
-  font-family:'Raleway', sans-serif;
   background-color: #0065FC;
   cursor: pointer;
   border-radius: 0em 1em 1em 0em;
@@ -347,15 +355,178 @@ color: #021430;
 /******************aside general grid***********/
 aside {
   grid-area: a;
-  width: 100%;
+  width: 90%;
   transition: 5ms;
 }
 /***************aside specific grid***********/
 .populaire_wrapper {
-  grid-area: b;
-  width: 95%;
-  margin: 0 auto 0 auto;
+  background-color: #F2F2F2;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows:50px repeat(3, 173px);
+  grid-template-areas: 
+  "t "
+  "soleil"
+  "eau"
+  "bleu";
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
 }
+.populaire_wrapper h2 {
+  grid-area: t;
+}
+.card7 {
+  grid-area: soleil;
+}
+.card8 {
+  grid-area: eau;  
+}
+.card9 {
+  grid-area: bleu;
+}
+/***************aside style*****************/
+.populaire_wrapper div {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  width: 85%;
+  height: 80%; 
+}
+
+.populaire_wrapper h2{
+  font-size: 1.3em; 
+  padding-top: 1.5rem;
+}
+
+.populaire_wrapper i:only-child {
+  padding-left: 5em;
+  color:rgb(0, 0, 0); 
+  font-size: 1.1em; 
+}
+
+.populaire_wrapper img { 
+  width:  40%;
+  height: 97%;
+  object-fit: cover;
+  border-radius: 10px 0px 0px 10px; 
+  float: left;
+}
+#card9_m {
+  display: none;
+} 
+
+.populaire_wrapper h5 {
+  text-align: left;
+  font-size: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0; 
+  padding: 0% 15% 0% 45%;
+}
+
+.populaire_wrapper p {
+  font-size: smaller;
+  padding-left: 45%;
+  padding-right: 2em;
+  margin: 0;
+  margin-bottom: 12%;
+}
+
+.populaire_wrapper i {
+  color: #0065FC;
+  font-size: smaller;    
+}
+
+.populaire_wrapper a {
+  text-decoration: none;
+  color: black;   
+}
+.populaire_wrapper div:hover {
+  transform: translateY(-1px);
+  box-shadow: 2px 2px 26px 0px rgba(0, 0, 0, 0.3);    
+}
+
+/***************activites GRID************************/
+#activities_grid {
+  grid-area: b;
+  width: 94%;
+  margin: 0 auto 30px auto;
+  
+}
+.activities_wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows:50px repeat(2, 200px);
+  grid-template-areas: 
+  "ac ac ac ac"
+  "v pom pa no"
+  "v fri pa lo"; 
+  justify-content: center;
+  align-content: center;
+  gap: 2em;
+}
+
+.activities_wrapper h2 {
+  grid-area: ac;
+}
+.imgA1 {
+  grid-area: v;
+}
+.imgA2 {
+  grid-area:pom;
+}
+.imgA3 {
+  grid-area: pa;
+}
+.imgA4 {
+  grid-area: fri;
+}
+.imgA5 {
+  grid-area: no;
+}
+.imgA6 {
+  grid-area: lo;
+}
+/***************ACTIVITIES STYLE********************/
+.activities_wrapper div {
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  transition: 5ms;
+}
+
+.activities_wrapper h5 {
+  grid-area: t;
+  font-size: .9rem;
+  margin: 0;
+  padding: 10px 10px 10px 15px;
+}
+.activities_wrapper a {
+  text-decoration: none;
+  color: black;
+
+}
+.activities_wrapper img { 
+  width:  100%;
+  height: 75%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  object-fit: cover;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.imgA1 img, .imgA3 img {
+  width:  100%;
+  height: 88%;
+}
+
+.activities_wrapper div:hover {
+  transform: translateY(-1px);
+  box-shadow: 2px 2px 26px 0px rgba(0, 0, 0, 0.3);
+}
+
 /****************footer grid******/
 footer {
   grid-area: f;
