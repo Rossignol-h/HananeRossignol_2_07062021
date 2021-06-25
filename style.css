@@ -135,8 +135,8 @@ display: none;
 color: #021430;
 }
 
-/*************filtres style********/
-.filtres_wrapper {
+/*************filter style********/
+.filter_wrapper {
 display: grid;
 grid-template-columns: 70px 180px 150px 180px 230px 2fr ; 
 grid-template-rows: 4rem;
@@ -144,17 +144,17 @@ grid-column-gap: 1.3rem;
 align-items: center;
 }
 
-.filtres_wrapper h4 {
+.filter_wrapper h4 {
 font-size: 1.1rem;
 }
 
-.filtres_wrapper a {
+.filter_wrapper a {
 border-radius: 50px;
 border: 2px solid #dddbdb ; 
 border-left: none;
 }
 
-.filtres_wrapper i {
+.filter_wrapper i {
 height: 100%;
 width: 3rem;
 text-align: center;
@@ -168,13 +168,13 @@ color: #0065FC;
 font-size: 1.2em;
 }
 
-.filtres_text {
+.filter_text {
 font-size: 1rem;
 font-weight: 700;
 margin: .5rem;
 }
 
-.filtres_wrapper a:hover {
+.filter_wrapper a:hover {
 color: #0065FC;
 box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
         inset -2px -2px 12px rgba(255, 255, 255, 0.5),
@@ -182,7 +182,7 @@ box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
         inset 2px 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.filtres_wrapper i:hover {
+.filter_wrapper i:hover {
 background-color: #4e94fd;
 border: .15rem solid rgb(78, 120, 184) ;
 color: #ffffff;
@@ -337,7 +337,7 @@ width: 90%;
 transition: 5ms;
 }
 /***************aside specific grid***********/
-.populaire_wrapper {
+.popular_wrapper {
 display: grid;
 grid-template-columns: 1fr;
 grid-template-rows:70px repeat(3, 175px);
@@ -351,7 +351,7 @@ justify-items: center;
 background-color: #F2F2F2;
 border-radius: 1rem;
 }
-.populaire_wrapper h2 {
+.popular_wrapper h2 {
 grid-area: t;
 }
 .card7 {
@@ -365,7 +365,7 @@ grid-area: bleu;
 }
 
 /***************aside style*****************/
-.populaire_wrapper div {
+.popular_wrapper div {
 background-color: #ffffff;
 border: none;
 border-radius: 1rem;
@@ -374,20 +374,20 @@ width: 85%;
 height: 85%; 
 }
 
-.populaire_wrapper h2 { 
+.popular_wrapper h2 { 
 justify-self: flex-start;
 align-self: center;
 margin-bottom: 1rem;
 padding: 0 1rem 0rem 2rem;
 }
 
-.populaire_wrapper i:only-child {
+.popular_wrapper i:only-child {
 margin-left: 6rem;
 font-size: 1.4rem; 
 color:rgb(0, 0, 0); 
 }
 
-.populaire_wrapper img { 
+.popular_wrapper img { 
 width:  40%;
 height: 100%;
 object-fit: cover;
@@ -399,13 +399,13 @@ float: left;
 display: none;
 } 
 
-.populaire_wrapper h5 {
+.popular_wrapper h5 {
 margin: 0;
 padding: 5% 10% 2% 45%;
 font-size: 1rem;
 }
 
-.populaire_wrapper p {
+.popular_wrapper p {
 font-size: .9rem;
 padding-left: 9.3rem;
 padding-right: 2rem;
@@ -413,12 +413,12 @@ margin: 0;
 margin-bottom: 2.5rem;
 }
 
-.populaire_wrapper i {
+.popular_wrapper i {
 color: #0065FC;
 font-size: .8rem;    
 }
 
-.populaire_wrapper div:hover {
+.popular_wrapper div:hover {
 transform: translateY(-1px);
 box-shadow: 2px 2px 26px 0px rgba(0, 0, 0, 0.3);    
 }

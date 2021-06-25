@@ -282,6 +282,10 @@ color: #021430;
     border-radius: 1rem 1rem 0rem 0rem;  
 }
 
+.card6 img {
+    object-position: 50% 60%;
+}
+
 .main_wrapper h5 {
     grid-area: t;
     text-align: left;
@@ -383,9 +387,12 @@ aside {
     padding-right: 1rem; 
     float: left;
 }
-#card9_m {
+#card9_d {
     display: none;
 } 
+#card9_m {
+    object-position: 50% 70%;
+}
 
 .popular_wrapper h5 {
     padding: 1.5rem 0rem 1rem 0rem;
