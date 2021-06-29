@@ -24,6 +24,10 @@ color: #000;
 list-style: none;
 }
 
+body, h1, h2, h3, h4, h5, h6, p {
+margin: 0;
+}
+
 body {
 width: 100%;
 min-height: 100vh;
@@ -39,77 +43,102 @@ grid-template-areas:
 "f f f f f f";
 }
 
-/***********head grid************/
+/*******************head************************/
 header {
 grid-area: h;
-width: 94%;
-margin: 0 auto 0 2rem;   
+width: 100%;
+margin: 0 auto 0 auto;   
 }
 
-/*******menu style***********/
+/********************menu*************************/
 .menu_wrapper {
+margin-top: 2em;
 display: grid;
-grid-template-columns: 0.5fr 2fr repeat(3, 150px); 
-grid-template-rows: none;
-align-items: flex-end;
-margin-bottom: 3rem;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(2, 50%);
+grid-template-areas:
+"l l s s"
+"h h a a";
+justify-content: space-between;
+justify-items: flex-start;
 }
+
 .menu_wrapper img {
-grid-column: 1 / 2;
-height: 50px;
+grid-area: l;
+padding-bottom: 2rem;
+padding-left: 1.5rem;
 
 }
+
 .menu_wrapper a {
-text-align: center; 
-padding-top: 50px;
-border-top: transparent solid 3px;
-}
-.menu_wrapper a:first-of-type {
-grid-column: 3/4;
-border-top: #0065FC solid 3px;
-color: #0065FC;
+text-align: center;
+width: 100%;
+padding-bottom: 1.5rem;
 }
 
-.menu_wrapper a:last-child {
-grid-column: 5/-1;
-color: #0065FC;
+.menu_h {
+grid-area: h;
+border-bottom: #0065FC solid 3px;
+color: #0065FC;  
+}
+
+.menu_a {
+grid-area: a;
+border-bottom: #e2e8f1 solid 3px;
+}
+
+#menu_i {
+grid-area: s;
+text-align: center;
+padding-top: 1rem;
 font-weight: 700;
-border-top: none;
+color: #0065FC; 
 }
 
-/***********search style***************/
+/**************search*******************/
 .search_wrapper {
-margin-bottom: 2rem;
+width: 100%;
+margin: 1.5rem 1.5rem 0 1rem;
 }
 
 .search_wrapper h1 {
+display: flex;
+flex-wrap: nowrap;
 margin-bottom: 0.8rem;
+min-width: 100px;
+max-width: 450px;
 }
 
 .search_wrapper form {
-display: grid;
-grid-template-columns: 50px 334px 130px 3fr ; 
-grid-template-rows: 3rem;
-margin-top: 1.5rem;
+display: flex;
+flex-wrap: nowrap;
+margin-top: 1.5rem; 
 }
+
 
 .search_wrapper i:first-child {
 background-color: #f2f2f2;
-border-radius: 0.9rem 0rem 0rem 0.9rem;
+border-radius: 1em 0em 0em 1em;
 font-size: 1.1rem;
 text-align: center;
 padding-top: 1rem;
+width: 3rem;
+height: 3rem;
 }
+
 .search_wrapper input {
 border: 1px solid rgb(230, 227, 227);
 font-size: 1rem;
 font-weight: 700;
 padding: 0.7em;
+min-width: 120px;
+max-width: 350px;
+flex-basis: 60%;
 }
-
 .search_input ::placeholder {
-color: rgb(0, 0, 0);
-opacity: 1;
+    color: rgb(0, 0, 0);
+    opacity: 1;
+    flex-shrink: 0;
 }    
 
 .search_input :focus {
@@ -126,37 +155,28 @@ border-radius: 0rem 0.9rem 0.9rem 0rem;
 font-size: 1rem;
 font-weight: 700;
 border: 0 ;
-transition: .5s;
+width: 3rem;
+height: 3rem;
+margin-right: .5rem;
 }
 
-#search_icon {
+.search_input span {
 display: none;
 }
 
-.search_input button:hover {
-color: #021430;
-}
-
-/*************filtres style********/
+/*******************filtres**************/
 .filter_wrapper {
 display: grid;
-grid-template-columns: 70px 180px 150px 2fr ; 
-grid-template-rows: 4rem 4rem;
-grid-column-gap: 1.3rem;
+grid-template-columns: 1fr ; 
+grid-template-rows: 3rem 3rem 3rem 3rem;
+grid-gap: .8rem;
 align-items: center;
-}
-
-.filter_button3 {
-grid-area:  2 / 2 / 3 / 3;
-}
-
-.filter_button4 {
-grid-area:  2 / 3 / 3 / 5;
-width:230px;
+margin: 1.5rem 1rem ;
 }
 
 .filter_wrapper h4 {
 font-size: 1.1rem;
+align-self: flex-end
 }
 
 .filter_wrapper a {
@@ -187,11 +207,11 @@ margin: .5rem;
 
 /***********************info*********************/
 .info_wrapper {
+width: 90%;
 display: flex;
-justify-items: flex-start;
-flex-flow: row wrap;
+flex-direction: row;
 place-items: center center;  
-margin: 1.9rem 0 1.9rem 0;
+margin: .4rem 0 2rem 1rem;
 }
 
 .info_icon {
@@ -204,12 +224,14 @@ border-radius: 100%;
 border: .15rem solid #ebe8e8 ;
 color: #0065FC;
 font-size: 0.8rem;
+flex-shrink: 0;
 }
 
 .info_text {
 font-size: 1rem;
 font-weight: 500;
 margin-left: 1rem;
+flex-shrink: 1;
 }
 
 /*******************main*************************/
@@ -222,15 +244,18 @@ margin: 0 auto 0 auto;
 /***********grid-area specific to main******************/
 .main_wrapper {
 display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows:60px repeat(3, 250px) 40px;
+grid-template-columns: 1fr;
+grid-template-rows: 50px repeat(6, 250px) 40px;
 grid-gap: 2rem;
 grid-template-areas: 
-"t t "
-"ca po" 
-"mo me"
-"pa am"
-"p p";
+"t"
+"ca" 
+"po" 
+"mo"
+"me"
+"pa" 
+"am"
+"p";
 justify-content: center;
 align-content: center;
 border-radius: 2%;
@@ -269,35 +294,31 @@ border-radius: 1rem;
 }
 
 .main_wrapper h2 {
-padding-top: 2.5rem;
+padding-top: 2rem;
 }
 
 .main_wrapper img { 
 width:  100%;
 height: 70%;
 object-fit: cover;
-border: .5rem solid #ffffff;
+border: .4rem solid #ffffff;
 border-radius: 1rem 1rem 0rem 0rem;  
 }
 
 .main_wrapper h5 {
 grid-area: t;
-text-align: left;
-padding-left: 10px; 
+padding-left: 1.5rem; 
 }
 
 .main_wrapper p {
-text-align: left;
-font-size: smaller;
+font-size: .9rem;
 font-weight: 400; 
-padding-left: 10px;
+padding-left: 1.5rem;
 }
 
 .main_wrapper i {
 padding-top: 5px;
-margin: 0;
-text-align: left;
-font-size: smaller;
+font-size: .9rem;
 color: #0065FC;  
 }
 .star_grey :last-child {
@@ -308,25 +329,22 @@ color: #d6d6d6;
 }
 
 .plus {
+justify-self: left;
 font-size: 1.2rem;
 font-weight: 600;
 }
-
 /******************aside grid***********/
 aside {
 grid-area: a;
-min-width: 90%;
-margin: 0 auto 0 auto;
+width: 100%;
+margin: 0 auto;
 }
 
 .popular_wrapper {
-background-color: #F2F2F2;
-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
-border-radius: 1rem;
 display: grid;
 gap: 1rem;
-grid-template-columns: 90%;
-grid-template-rows:60px repeat(3, 180px) 30px;
+grid-template-columns: 1fr;
+grid-template-rows:60px repeat(3, 250px) 30px;
 grid-template-areas: 
 "t "
 "soleil"
@@ -335,7 +353,9 @@ grid-template-areas:
 justify-content: center;
 justify-items: center;
 align-items: center;
+background-color: #F2F2F2;
 }
+
 .popular_wrapper h2 {
 grid-area: t;
 }
@@ -355,11 +375,11 @@ border: none;
 border-radius: 1rem;
 box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 width: 90%;
-height: 100%; 
+height: 90%; 
 }
 
 .popular_heading {
-width: 88%;
+width: 80%;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -371,37 +391,40 @@ color:rgb(0, 0, 0);
 }
 
 .popular_wrapper img { 
-width:  50%;
-height: 100%;
+width:  100%;
+height: 60%;
 object-fit: cover;
 border: .4rem solid #ffffff;
-border-radius: 1rem 0rem 0rem 1rem;
-padding-right: 1rem; 
-float: left;
+border-radius: 1rem 1rem 0rem 0rem;  
 }
-#card9_m {
+
+#card9_d {
 display: none;
 } 
 
 .popular_wrapper h5 {
-padding: 1.5rem 0rem 1rem 0rem;
+padding-left: 1.5rem;
 }
 
 .popular_wrapper p {
 font-size: .9rem;
-padding-right: 2rem;
-margin-bottom: 2.5rem;
+font-weight: 400;
+padding-left: 1.5rem;
 }
 
 .card8 p {
-margin-bottom: 2rem;
+margin-bottom: 0;
+}
+
+.card8 h5 {
+padding: 0 1.5rem;
+
 }
 
 .popular_wrapper p >i {
 color: #0065FC;
 font-size: .8rem;    
 }
-
 
 /***************activites GRID************************/
 #activities_grid {
@@ -413,13 +436,16 @@ margin: 0 auto 2rem auto;
 .activities_wrapper {
 display: grid;
 grid-gap: 2rem;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows:50px repeat(3, 180px);
+grid-template-columns: 1fr;
+grid-template-rows:50px repeat(6, 180px);
 grid-template-areas: 
-"ac ac"
-"v pom"
-"fri pa"
-"no lo"; 
+"ac"
+"v"
+"pom"
+"fri"
+"pa"
+"no" 
+"lo"; 
 justify-content: center;
 align-content: center;
 }
@@ -453,13 +479,12 @@ height: 100%;
 }
 
 .activities_wrapper h2 {
-align-self: flex-end;
+padding-top: 2rem;
 }
-
 
 .activities_wrapper h5 {
 grid-area: t;
-padding: 10px 10px 10px 15px;
+padding: .5rem .4rem;
 }
 
 .activities_wrapper img { 
@@ -468,17 +493,11 @@ height: 75%;
 object-fit: cover;
 border-radius: 1rem 1rem 0rem 0rem;
 }
-
 /*******************foot************************/
 footer {
-grid-area: f;
-display: flex; 
-padding: 1.5rem 0rem 1.5rem 2rem;
-background-color: #F2F2F2;      
-}  
-
-footer div {
-width: 100%;
+grid-area: f; 
+background-color: #F2F2F2; 
+padding: 1.5rem 2rem;      
 }
 
 footer h4 {
