@@ -38,3 +38,10 @@ body {
 .popular_wrapper h5 {
    padding-top: 2rem;
  }
+/***************activites**************/
+.activities_wrapper {
+   grid-gap: 1rem;
+}
+.imgA3 h5 {
+   padding: 5px 4px;
+}
