@@ -1,19 +1,16 @@
 body {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     grid-template-areas: 
-    "h h h h h h"
-    "a a a a a a"
-    "m m m m m m"
-    "b b b b b b"
-    "f f f f f f";
+    "h h h h h h h h"
+    "a a a a a a a a"
+    "m m m m m m m m"
+    "b b b b b b b b"
+    "f f f f f f f f";
 }
 /***********head************/
 header {
-    margin: 0 auto 0 2rem;   
+    margin-left: 2rem;   
 }
-.search_wrapper form {
-    grid-template-columns: 50px 334px 130px 3fr;  
-} 
 /*************filtres style********/
 .filter_wrapper {
     grid-gap: .8rem;
@@ -23,14 +20,13 @@ header {
 }
 .filter_button4 {
     grid-area:  2 / 3 / 3 / 5;
-    width:230px;
+    width:220px;
 }
 /*******************main*************************/
 #main_grid {
     width: 90%;
     margin: 0 auto 0 auto;
 }
-/***********grid-area specific to main******************/
 .main_wrapper {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows:60px repeat(3, 260px) 40px;

@@ -6,15 +6,11 @@ body {
    "f f f f f f f f f f f f";
 }
 /***********main**************/
-#main_grid {
-   margin-right: 2rem;
-}
 .main_wrapper {
    grid-template-columns: repeat(2, 250px);
    grid-template-rows:70px repeat(3, 200px) 40px;
    margin: 0rem;
    margin-right: 1.5rem;
-   padding: 0rem;
    grid-template-areas: 
    "t t "
    "ca po" 
@@ -22,24 +18,14 @@ body {
    "pa am"
    "p p";
 }
-
 .main_wrapper h2, .plus {
    padding-left: .9rem;
 }
 .main_wrapper a {
    line-height: 1.3rem;
 }
-.main_wrapper img { 
-   height: 60%; 
-}
 /******************aside***********/
-aside {
-   min-width: unset;
-   width: 90%;
-   margin: 0 1.5rem 0 auto;
-}
 .popular_wrapper {
-   grid-template-columns: 1fr;
    grid-template-rows:70px repeat(3, 190px) 70px;
 }
 .popular_wrapper div {
@@ -50,12 +36,5 @@ aside {
    margin-right: 1rem;
 }
 .popular_wrapper h5 {
-   padding-right: .5rem;
-}
-/***************activities********************/
-.activities_wrapper {
-   gap: 1rem;
-}
-.imgA3 h5 {
-   padding: 10px 5px;
-}
+   padding-top: 2rem;
+ }

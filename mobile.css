@@ -1,5 +1,4 @@
 body {
-    display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
@@ -16,14 +15,10 @@ header {
 /********************menu*************************/
 .menu_wrapper {
     margin-top: 2em;
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 50%);
     grid-template-areas:
     "l l s s"
     "h h a a";
-    justify-content: center;
-    justify-items: flex-start;
     align-items: center;
 }
 .menu_wrapper img {
@@ -110,7 +105,6 @@ header {
 }
 /******************aside***********/
 aside {
-    width: 100%;
     max-width: unset;
 }
 .popular_wrapper {
